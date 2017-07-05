@@ -296,6 +296,7 @@ selinux_compute_access_vector(init_t)
 selinux_compute_create_context(init_t)
 selinux_compute_user_contexts(init_t)
 selinux_validate_context(init_t)
+selinux_compute_relabel_context(init_t)
 selinux_unmount_fs(init_t)
 
 term_create_pty_dir(init_t)
@@ -303,6 +304,8 @@ term_use_unallocated_ttys(init_t)
 term_use_console(init_t)
 term_use_all_inherited_terms(init_t)
 term_use_generic_ptys(init_t)
+term_relabel_all_ptys(init_t)
+domain_obj_id_change_exemption(init_t)
 
 # Run init scripts.
 init_domtrans_script(init_t)
@@ -543,11 +546,13 @@ systemd_manage_unit_symlinks(initrc_t)
 systemd_config_all_services(initrc_t)
 systemd_read_unit_files(initrc_t)
 systemd_login_status(init_t)
+systemd_write_inherited_logind_sessions_pipes(init_t)
 
 create_sock_files_pattern(init_t, init_sock_file_type, init_sock_file_type)
 
 auth_use_nsswitch(init_t)
 auth_rw_login_records(init_t)
+auth_rw_lastlog(init_t)
 auth_domtrans_chk_passwd(init_t)
 
 ifdef(`distro_redhat',`

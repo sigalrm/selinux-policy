@@ -117,6 +117,7 @@ storage_dontaudit_setattr_fixed_disk_dev(local_login_t)
 storage_dontaudit_getattr_removable_dev(local_login_t)
 storage_dontaudit_setattr_removable_dev(local_login_t)
 
+term_use_generic_ptys(local_login_t)
 term_use_all_ttys(local_login_t)
 term_use_unallocated_ttys(local_login_t)
 term_relabel_unallocated_ttys(local_login_t)
