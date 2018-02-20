@@ -360,6 +360,9 @@ init_manage_config_transient_files(systemd_machined_t)
 userdom_dbus_send_all_users(systemd_machined_t)
 
 term_use_ptmx(systemd_machined_t)
+term_use_generic_ptys(systemd_machined_t)
+
+getty_start_services(systemd_machined_t)
 
 optional_policy(`
 	dbus_connect_system_bus(systemd_machined_t)
